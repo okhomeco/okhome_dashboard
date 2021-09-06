@@ -10,7 +10,7 @@ pkg upgrade
 echo -e "\033[43;31m>>> Installing required package...\033[0m"
 # zeroconf 는 IKEA Tradfri 게이트웨이 연동 시 오류 수정을 위해 설치함
 
-pkg install -y python coreutils nano clang mosquitto nodejs openssh termux-api zeroconf
+pkg install python coreutils nano clang mosquitto nodejs openssh termux-api
 echo -e "\033[43;31m>>> Installing Process Manager...\033[0m"
 npm i -g --unsafe-permn pm2
 
