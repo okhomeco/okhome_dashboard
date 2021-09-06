@@ -14,6 +14,9 @@ pkg install python coreutils nano clang mosquitto nodejs openssh termux-api
 echo -e "\033[43;31m>>> Installing Process Manager...\033[0m"
 npm i -g --unsafe-permn pm2
 
+# Wheel 설치 
+pip install wheel
+
 # Home Assistant 설치 -- 버전별 이슈 체크 (2021.7.4 버전은 hacs 설치에 문제가 있음) // 2021.4.0 버전 hdcp 이슈 없음 // 최신버전으로 설치 시도(210830)
 
 echo -e "\033[43;31m>>> Installing Home Server...\033[0m"
