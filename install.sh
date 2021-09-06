@@ -5,12 +5,12 @@ echo -e "\033[43;31m*** 안드로이드 홈 서버 설치를 시작합니다. **
 echo -e "\033[43;31m*** Please check you installed termux, termux:API, termux:BOOT ***\033[0m"
 cd ~
 echo -e "\033[43;31m*** Updating Linux Package: When error occurs, please check your internet connection :) ***\033[0m"
-apt update
-apt upgrade
+pkg update
+pkg upgrade
 echo -e "\033[43;31m>>> Installing required package...\033[0m"
 # zeroconf 는 IKEA Tradfri 게이트웨이 연동 시 오류 수정을 위해 설치함
 
-apt install -y python coreutils nano clang mosquitto nodejs openssh termux-api zeroconf 
+pkg install -y python coreutils nano clang mosquitto nodejs openssh termux-api zeroconf 
 echo -e "\033[43;31m>>> Installing Process Manager...\033[0m"
 npm i -g --unsafe-permn pm2
 
@@ -20,7 +20,7 @@ echo -e "\033[43;31m>>> Installing Home Server...\033[0m"
 pip install homeassistant
 
 echo -e "\033[43;31m>>> Installing Image Library...\033[0m"
-apt install -y libjpeg-turbo
+pkg install -y libjpeg-turbo
 echo -e "\033[43;31m>>> Installing Time Zone Data...\033[0m"
 pip install tzdata
 echo -e "\033[43;31m>>> Installing http support...\033[0m"
