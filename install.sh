@@ -25,6 +25,8 @@ echo -e "\033[43;31m>>> Installing Time Zone Data...\033[0m"
 pip install tzdata
 echo -e "\033[43;31m>>> Installing http support...\033[0m"
 pip install aiohttp_cors
+echo -e "\033[43;31m>>> Installing Zeroconf support...\033[0m"
+pip install zeroconf
 
 echo -e "\033[43;31m>>> Starting ssh server... Connect with port 8022 \033[0m"
 sshd
