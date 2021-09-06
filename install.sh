@@ -69,6 +69,20 @@ chmod 755 start-pm2
 
 echo -e "\033[41;31m!!! You should run Termux:Boot app once to enable device-boot auto-start server !!! \033[0m"
 
+# # smbd 설치 >> root 권한 없이 설정 어려움 (재검토 필요)
+# echo -e "\033[41;31m!!! 파일 접속용 Samba Server 를 설정합니다 !!! \033[0m"
+# pkg install unstable-repo
+# pkg install samba
+# # smb.conf 설정 파일 생성
+# mkdir /data/data/com.termux/files/usr/etc/samba
+# echo -e '[share]\ncomment = share\npath = /data/data/com.termux/files/\npublic = no\nwritable = yes\nprintable = no\nwrite list = root\ncreate mask = 0777\n directory mask = 0777' | tee /data/data/com.termux/files/usr/etc/samba/smb.conf
+# smbpasswd
+
+# termux-setup-storage
+
+echo -e "\033[41;31m*** 저장공간 접근 권한을 요청합니다. *** \033[0m"
+termux-setup-storage
+
 # Home Assistant 기본 설정 관련 파일 (custom_components, www, www/community, www/fonts, www/icons, www/sound, #include, #lovelace 관련 파일 자동설치 설정)
 
 # Google Assistant 연동 관련 자동화 고려할 것
