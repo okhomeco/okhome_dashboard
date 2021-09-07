@@ -97,7 +97,17 @@ pkg install yarn
 pkg install build-essential
 pkg install git
 yarn global add code-server
+pkg install ripgrep
 
+# VS Code Server 외부접속 설정
+ip=`ip addr |
+    grep lan0 |
+    grep 192 |
+    awk '{split($2, arr,"/"); print arr[1]}'`
+
+sed -i "1s/.*/bind-addr: ${ip}:8080/g" ~/.config/code-server/config.yaml
+
+code-server &
 
 # Home Assistant 기본 설정 관련 파일 (custom_components, www, www/community, www/fonts, www/icons, www/sound, #include, #lovelace 관련 파일 자동설치 설정 예정)
 
