@@ -92,6 +92,13 @@ echo -e "\033[41;31m!!! You should run Termux:Boot app once to enable device-boo
 echo -e "\033[41;31m*** 저장공간 접근 권한을 요청합니다. *** \033[0m"
 termux-setup-storage
 
-# Home Assistant 기본 설정 관련 파일 (custom_components, www, www/community, www/fonts, www/icons, www/sound, #include, #lovelace 관련 파일 자동설치 설정)
+# VS Code Server Install
+pkg install yarn
+pkg install build-essential
+pkg install git
+yarn global add code-server
 
-# Google Assistant 연동 관련 자동화 고려할 것
+
+# Home Assistant 기본 설정 관련 파일 (custom_components, www, www/community, www/fonts, www/icons, www/sound, #include, #lovelace 관련 파일 자동설치 설정 예정)
+
+# Google Assistant 연동 관련 자동화 추가 예정
