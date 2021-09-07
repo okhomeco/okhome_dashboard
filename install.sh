@@ -8,9 +8,9 @@ echo -e "\033[43;31m*** Updating Linux Package: When error occurs, please check 
 pkg update
 pkg upgrade
 echo -e "\033[43;31m>>> Installing required package...\033[0m"
-# zeroconf 는 IKEA Tradfri 게이트웨이 연동 시 오류 수정을 위해 설치함
+# autoconf 는 IKEA Tradfri 게이트웨이 연동 시 오류 수정을 위해 설치함
 
-pkg install python coreutils nano clang mosquitto nodejs openssh termux-api
+pkg install python coreutils nano clang mosquitto nodejs openssh termux-api autoconf
 echo -e "\033[43;31m>>> Installing Process Manager...\033[0m"
 npm i -g --unsafe-permn pm2
 
@@ -20,7 +20,7 @@ pip install wheel
 # Home Assistant 설치 -- 버전별 이슈 체크 (2021.7.4 버전은 hacs 설치에 문제가 있음) // 2021.4.0 버전 hdcp 이슈 없음 // 최신버전으로 설치 시도(210830)
 
 echo -e "\033[43;31m>>> Installing Home Server...\033[0m"
-pip install homeassistant
+pip install homeassistant==2021.8.8
 
 echo -e "\033[43;31m>>> Installing Image Library...\033[0m"
 pkg install -y libjpeg-turbo
@@ -30,6 +30,12 @@ echo -e "\033[43;31m>>> Installing http support...\033[0m"
 pip install aiohttp_cors
 echo -e "\033[43;31m>>> Installing Zeroconf support...\033[0m"
 pip install zeroconf
+echo -e "\033[43;31m>>> Installing Additional support...\033[0m"
+# pip install sqlalchemy==1.4.17
+# pip install pillow
+# pip install pyturbojpeg
+pip install dtlssocket
+pip install pycountry # Required for LG Smart Thinq Custom Componant
 
 echo -e "\033[43;31m>>> Starting ssh server... Connect with port 8022 \033[0m"
 sshd
